@@ -3,7 +3,7 @@
 @endphp
 <header>
     <div class="container mt-1 d-flex justify-content-between">
-            <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="dc-logo">
+            <a href="{{('/')}}"><img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="dc-logo"></a>
         <nav class="navbar navbar-expand-lg navbar-light mx-5 ">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
