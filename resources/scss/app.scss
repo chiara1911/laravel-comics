@@ -10,8 +10,13 @@ $fa-font-path: "../webfonts" !default;
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
 @import '~bootstrap/scss/bootstrap';
-@use '/resources/scss/partials/variables';
+
 
 h1{
     color: $text-color;
+}
+
+img{
+    width: 300px;
+    height: 300px;
 }
