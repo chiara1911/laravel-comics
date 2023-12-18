@@ -54,6 +54,13 @@ $fa-font-path: "../webfonts" !default;
 
     footer{
         background-image: url(../img/footer-bg.jpg);
+        height: 400px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        #bottom-footer{
+            background-color: var(--dark);
+        }
     }
   }
 

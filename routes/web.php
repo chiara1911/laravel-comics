@@ -19,7 +19,16 @@ Route::get('/', function () {
 });
 
 
-// Route::get('/', function () {
-// $navLinks = config('nav.navLinks');
-// return view('partials.header' , compact('navLinks'));
-// });
+Route::get('/characters' , function(){
+    return view('pages.characters');
+}) -> name('characters')
+;
+Route::get('/comics' , function(){
+    return view('pages.comics');
+}) -> name('comics')
+;
+Route::get('/movies' , function(){
+    return view('pages.movies');
+}) -> name('movies')
+;
+
