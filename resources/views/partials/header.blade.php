@@ -1,1 +1,32 @@
-<div>header</div>
+
+@php
+    $data = config('nav.navLinks')
+@endphp
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav text-uppercase ">
+        @foreach ($navLinks as $navLink)
+        <li class="nav-item ">
+            <a class="nav-link" href="#"
+              > {{$navLink}}</a
+            >
+          </li>
+        @endforeach
+
+
+      </ul>
+    </div>
+  </nav>
+
+      <div id="hero-img"></div>

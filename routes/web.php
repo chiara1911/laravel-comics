@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 
+// Route::get('/', function () {
+// $navLinks = config('nav.navLinks');
+// return view('partials.header' , compact('navLinks'));
+// });
