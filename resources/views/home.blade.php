@@ -10,9 +10,7 @@
     <main>
 
         <div class="container">
-            <a href="{{ route ('characters') }}" class="text-uppercase"> characters</a>
-            <a href="{{ route ('comics') }}" class="text-uppercase"> comics</a>
-            <a href="{{ route ('movies') }}" class="text-uppercase"> movies</a>
+
             <h2 class="text-light">DC COMICS</h2>
             <div class="row">
                 @foreach ($comics as $comic)
