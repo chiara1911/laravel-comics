@@ -16,7 +16,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav text-uppercase ">
-        @foreach ($navLinks as $navLink)
+        @foreach ($data as $navLink)
         <li class="nav-item ">
             <a class="nav-link" href="#"
               > {{$navLink}}</a
