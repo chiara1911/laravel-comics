@@ -15,14 +15,14 @@
                     <ul class=" list-unstyled ">
                         <h4 class="text-uppercase text-light">dc comics</h4>
                         @foreach ($comics as $comic)
-                            <li class="text-light">{{$comic}}</li>
+                            <li class="text-light"><a href="#" class=" text-decoration-none text-light">{{$comic}}</a></li>
                         @endforeach
 
                     </ul>
                     <ul class=" list-unstyled ">
                         <h4 class="text-uppercase text-light">shop</h4>
                         @foreach ($shop as $shopEl)
-                            <li class="text-light">{{$shopEl}}</li>
+                            <li class="text-light"><a href="#" class=" text-decoration-none text-light">{{$shopEl}}</a></li>
                         @endforeach
 
                     </ul>
@@ -32,7 +32,7 @@
                     <ul class=" list-unstyled ">
                         <h4 class="text-uppercase text-light">dc</h4>
                         @foreach ($dc as $dcEl)
-                            <li class="text-light">{{$dcEl}}</li>
+                            <li class="text-light"><a href="#" class=" text-decoration-none text-light">{{$dcEl}}</a></li>
                         @endforeach
 
                     </ul>
@@ -41,7 +41,7 @@
                     <ul class=" list-unstyled ">
                         <h4 class="text-uppercase text-light">sites</h4>
                         @foreach ($sites as $site)
-                            <li class="text-light">{{$site}}</li>
+                            <li class="text-light"><a href="#" class=" text-decoration-none text-light">{{$site}}</a></li>
                         @endforeach
 
                     </ul>

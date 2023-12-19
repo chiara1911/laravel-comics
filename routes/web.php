@@ -19,14 +19,26 @@ Route::get('/', function () {
 });
 
 //altre pagine
+Route::get('/comics' , function(){
+    $comics = config('db.comics');
+    return view('comics.index', compact('comics'));
+}) -> name('comics.index');
+
+Route::get('/comics/{comic}', function ($id) {
+    $comics = config('db.comics');
+    if ($id >= 0 && $id < count($comics)) {
+        $comic = $comics[$id];
+        return view('comics.show', compact('comic'));
+    } else {
+        abort(404);
+    }
+})->name('comics.show');
 
 Route::get('/characters' , function(){
     return view('pages.characters');
 }) -> name('characters');
 
-Route::get('/comics' , function(){
-    return view('pages.comics');
-}) -> name('comics');
+
 
 Route::get('/movies' , function(){
     return view('pages.movies');
