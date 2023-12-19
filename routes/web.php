@@ -34,15 +34,23 @@ Route::get('/comics/{comic}', function ($id) {
     }
 })->name('comics.show');
 
+Route::get('/movies' , function(){
+    $movies = config('moviedb.movies');
+    return view('movies.index', compact('movies'));
+}) -> name('movies.index');
+
+Route::get('/movies/{movie}', function ($id) {
+$movies = config('moviedb.movies');
+if ($id >= 0&& $id < count($movies)) {
+    $movie = $movies[$id];
+    return view('movies.show', compact('movie'));
+
+}})->name('movies.show');
+
 Route::get('/characters' , function(){
     return view('pages.characters');
 }) -> name('characters');
 
-
-
-Route::get('/movies' , function(){
-    return view('pages.movies');
-}) -> name('movies');
 Route::get('/tv' , function(){
     return view('pages.tv');
 }) -> name('tv');
