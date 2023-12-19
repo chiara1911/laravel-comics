@@ -9,20 +9,17 @@
     @endphp
     <main>
 
-        <div class="container">
-
-            <h2 class="text-light">DC COMICS</h2>
+        <div class="container ">
             <div class="row">
-
-                    <div class="col-12">
-                        <div class=" d-flex flex-row">
+                    <div class="col-12 m-4">
+                        <div class="d-flex flex-row">
                                 <img src="{{ $comic['thumb'] }}" alt="{{ $comic['series'] }}"  id="big-image">
                                 <div class="d-flex flex-column px-4 text-light text-uppercase">
                                     <h3
                                     >title: {{ $comic['title']}}</h3>
                                     <h4 >description {{$comic['description']}}</h4>
                                     <div class="mt-3 d-flex justify-content-between ">
-                                        <span class="bg-primary  p-3">{{$comic['price']}}</span>
+                                        <span class="btn btn-primary  p-3">{{$comic['price']}}</span>
                                         <span class="d-flex flex-column">data di uscita : <span>{{$comic['sale_date']}}</span></span>
                                     </div>
 
