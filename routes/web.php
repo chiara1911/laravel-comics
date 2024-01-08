@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,21 +21,26 @@ Route::get('/', function () {
 });
 
 //altre pagine
-Route::get('/comics' , function(){
-    $comics = config('db.comics');
-    return view('comics.index', compact('comics'));
-}) -> name('comics.index');
 
-Route::get('/comics/{comic}', function ($id) {
-    $comics = config('db.comics');
-    if ($id >= 0 && $id < count($comics)) {
-        $comic = $comics[$id];
-        return view('comics.show', compact('comic'));
-    } else {
-        abort(404);
-    }
-})->name('comics.show');
+//pagine comics
+// Route::get('/comics' , function(){
+//     $comics = config('db.comics');
+//     return view('comics.index', compact('comics'));
+// }) -> name('comics.index');
 
+// Route::get('/comics/{comic}', function ($id) {
+//     $comics = config('db.comics');
+//     if ($id >= 0 && $id < count($comics)) {
+//         $comic = $comics[$id];
+//         return view('comics.show', compact('comic'));
+//     } else {
+//         abort(404);
+//     }
+// })->name('comics.show');
+
+Route::resource('comics', ComicController::class);
+
+//pagine movies
 Route::get('/movies' , function(){
     $movies = config('moviedb.movies');
     return view('movies.index', compact('movies'));
@@ -47,9 +54,12 @@ if ($id >= 0&& $id < count($movies)) {
 
 }})->name('movies.show');
 
+//pagine characters
 Route::get('/characters' , function(){
-    return view('pages.characters');
-}) -> name('characters');
+    $characters = config('charactersdb.person');
+    $dd = config('charactersdb.person');
+    return view('characters.index', compact('characters'));
+}) -> name('characters.index');
 
 Route::get('/tv' , function(){
     return view('pages.tv');
@@ -79,4 +89,7 @@ Route::get('/shop' , function(){
     return view('pages.shop');
 }) -> name('shop');
 
+Route::fallback(function () {
+    return redirect()->route('comics.index');
+});
 
