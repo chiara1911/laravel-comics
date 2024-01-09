@@ -17,14 +17,23 @@
                     <div class="col-12 col-md-3 col-lg-2">
                         <div class="card-wrapper">
                             <div class="img-card overflow-hidden">
-                                <a href="{{ route ('comics.show' , $comic->id)}}"><img src="{{ $comic->thumb}}" alt="{{ $comic->series}}"></a>
+                                <a href="{{ route('comics.show', $comic->id) }}"><img src="{{ $comic->thumb }}"
+                                        alt="{{ $comic->series }}"></a>
                             </div>
 
                             <span
                                 class="p-2 d-flex flex-wrap align-content-center text-light text-uppercase">{{ $comic->title }}</span>
 
                         </div>
+                        <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-success">modifica</a>
+                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
 
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"> Cancella </button>
+
+                        </form>
+                        {{-- <a href="{{ route('comics.destroy', $comic->id) }}" >cancella</a> --}}
 
                     </div>
                 @endforeach
